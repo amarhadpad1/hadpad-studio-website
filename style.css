@@ -37,7 +37,9 @@ nav a.pill{background:var(--grad);color:#fff;padding:.4rem 1rem;border-radius:99
 .svc h3{font-size:1.5rem;margin-bottom:.6rem}
 .svc p{margin:0;color:var(--muted)}
 .proj{display:grid;grid-template-columns:1.2fr 1fr;gap:2rem;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.proj + .proj{margin-top:1.5rem}
 .proj img{display:block;width:100%;height:100%;object-fit:cover;min-height:260px}
+.proj .ph{display:grid;place-items:center;align-self:stretch;min-height:260px;background:var(--grad);color:#fff;font:800 clamp(1.6rem,3.5vw,2.4rem)/1.1 "Bricolage Grotesque",sans-serif;text-align:center;padding:1rem}
 .proj div{padding:1.5rem 1.75rem 1.75rem 0}
 .proj h3{font-size:1.7rem;margin-bottom:.7rem}
 .proj p{color:var(--muted);margin:0 0 1.25rem}
@@ -78,6 +80,7 @@ footer{padding:2.5rem 0 2rem;color:var(--muted);font-size:.9rem}
 .hero,.proj,.box{grid-template-columns:1fr}.hero{gap:1rem}.mark{min-height:260px}
 .grid3,.cards{grid-template-columns:1fr}.logos{grid-template-columns:repeat(2,1fr)}
 .proj div{padding:0 1.5rem 1.75rem}.box{padding:1.5rem}
+.proj .ph{min-height:180px}
 nav a:not(.pill){display:none}.btn.alt{margin:.6rem 0 0}}
 @media (prefers-reduced-motion:no-preference){.mark img{animation:float 5s ease-in-out infinite alternate}}
 @keyframes float{to{translate:0 -10px}}
