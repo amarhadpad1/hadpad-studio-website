@@ -1,11 +1,10 @@
+// Contact form: saves each enquiry to Google Sheets. The Apps Script emails the owner.
 (function () {
   var form = document.getElementById('f');
   var msg = document.getElementById('msg');
-  var EMAIL = 'aharpad@gmail.com';
   var WA = 'https://wa.me/916300220509?text=';
-
-  // 👇 PASTE YOUR GOOGLE APPS SCRIPT WEB APP URL BETWEEN THE QUOTES
   var SHEET_URL = 'https://script.google.com/macros/s/AKfycbwpUX9-Kcj6-ufLvPMzVcDgZUVIbDJgbyeatynaHTrOATHLY-QI3lTWNOO8I-Zy-TXQ/exec';
+  var loadedAt = Date.now();
 
   form.addEventListener('submit', function (e) {
     e.preventDefault();
@@ -17,32 +16,24 @@
       msg.textContent = 'Please enter your name and a 10-digit phone number.';
       return;
     }
+
+    // Bot checks: hidden field filled, or form submitted too fast
+    if (form._honey.value || Date.now() - loadedAt < 3000) {
+      form.reset();
+      msg.className = 'ok';
+      msg.textContent = 'Thank you! We received your message and will call you soon.';
+      return;
+    }
+
     var btn = form.querySelector('button');
     btn.disabled = true;
     btn.textContent = 'Sending...';
 
-    var data = new FormData(form);
-
-    // 1) Save to Google Sheet
-    var toSheet = fetch(SHEET_URL, {
+    fetch(SHEET_URL, {
       method: 'POST',
       mode: 'no-cors',
-      body: new URLSearchParams(data)
-    });
-
-    // 2) Email the owner
-    var toEmail = fetch('https://formsubmit.co/ajax/' + EMAIL, {
-      method: 'POST',
-      headers: { Accept: 'application/json' },
-      body: data
-    }).then(function (r) {
-      if (!r.ok) throw new Error('fail');
-    });
-
-    // Success if at least one of them worked
-    Promise.allSettled([toSheet, toEmail]).then(function (res) {
-      var ok = res.some(function (x) { return x.status === 'fulfilled'; });
-      if (!ok) throw new Error('fail');
+      body: new URLSearchParams(new FormData(form))
+    }).then(function () {
       form.reset();
       msg.className = 'ok';
       msg.textContent = 'Thank you! We received your message and will call you soon.';
