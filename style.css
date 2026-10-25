@@ -44,6 +44,11 @@ nav a.pill{background:var(--grad);color:#fff;padding:.4rem 1rem;border-radius:99
 .proj h3{font-size:1.7rem;margin-bottom:.7rem}
 .proj p{color:var(--muted);margin:0 0 1.25rem}
 .sub{font-size:1.5rem;margin:2.5rem 0 1rem}
+.cardbox summary{list-style:none;width:max-content}
+.cardbox summary::-webkit-details-marker{display:none}
+.cardbox .s-open,.cardbox[open] .s-closed{display:none}
+.cardbox[open] .s-open{display:inline}
+.cardbox[open] summary{margin-bottom:1.5rem}
 .cardset{display:grid;gap:2rem}
 .cardset figure{margin:0;display:grid;grid-template-columns:1fr 1fr;gap:1rem}
 .cardset img{display:block;width:100%;height:auto;border-radius:10px;box-shadow:0 8px 24px rgba(11,16,48,.18)}
