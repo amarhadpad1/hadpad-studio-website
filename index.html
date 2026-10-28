@@ -6,6 +6,11 @@
 <title>Hadpad Studio – Brands that get remembered</title>
 <meta name="description" content="Hadpad Studio designs visiting cards, logos and websites for growing businesses. Get a free quote today.">
 <meta name="theme-color" content="#2a1fd8">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hadpad Studio – Brands that get remembered">
+<meta property="og:description" content="Visiting cards, logos and websites for growing businesses.">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Hadpad Studio","description":"Visiting cards, logos and websites for growing businesses.","telephone":"+91 63002 20509","email":"aharpad@gmail.com"}</script>
+<script>document.documentElement.classList.add('js');try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,14 +21,16 @@
 <body>
 <header><div class="wrap bar">
 <a class="logo" href="#top"><img src="images/logo.png" alt="" width="28" height="40"><span>Hadpad Studio</span></a>
-<nav><a href="#services">Services</a><a href="#projects">Projects</a><a href="#about">About</a><a class="pill" href="#contact">Contact</a></nav>
+<div class="side"><nav id="nav" aria-label="Main"><a href="#services">Services</a><a href="#projects">Projects</a><a href="#brief">Start your brand</a><a href="#faq">FAQ</a><a href="#about">About</a><a class="pill" href="#contact">Contact</a></nav>
+<button class="icon-btn" id="theme" type="button" aria-label="Switch light or dark mode">&#9680;</button>
+<button class="icon-btn menu" id="menu" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav">&#9776;</button></div>
 </div></header>
 <main id="top">
 <section class="wrap hero">
 <div>
 <h1>You Dream It. We Build It.</h1>
 <p>Websites, visiting cards and logos designed to work together, so customers recognise your business everywhere they meet it.</p>
-<a class="btn" href="#contact">Get a free quote</a><a class="btn alt" href="#projects">See our projects</a>
+<a class="btn" href="#contact">Get a free quote</a><a class="btn alt" href="#projects">View our work</a>
 </div>
 <div class="mark" aria-hidden="true"><img src="images/logo.png" alt="" width="260" height="370"></div>
 </section>
@@ -31,10 +38,12 @@
 <section class="wrap sec" id="services">
 <h2>What we make</h2>
 <div class="grid3">
-<div class="svc"><h3>Visiting cards</h3><p>Print-ready cards with clear details and a finish people want to keep.</p></div>
-<div class="svc"><h3>Logo design</h3><p>A simple, memorable mark with colours and fonts that fit your business.</p></div>
-<div class="svc"><h3>Website design</h3><p>Fast, mobile-friendly websites with a contact form that brings in enquiries.</p></div>
+<div class="svc"><h3>Visiting cards</h3><p>Print-ready cards with clear details and a finish people want to keep.</p><a class="tl" href="#contact" data-svc="Visiting cards">Get a quote &#8250;</a></div>
+<div class="svc"><h3>Logo design</h3><p>A simple, memorable mark with colours and fonts that fit your business.</p><a class="tl" href="#contact" data-svc="Logo design">Get a quote &#8250;</a></div>
+<div class="svc"><h3>Website design</h3><p>Fast, mobile-friendly websites with a contact form that brings in enquiries.</p><a class="tl" href="#contact" data-svc="Website design">Get a quote &#8250;</a></div>
 </div>
+<h3 class="sub">Packages</h3>
+<div class="pk"><div class="pkg"><h4>Visiting Card Design</h4><p>Print-ready cards with your name, logo and colours.</p><a class="tl" href="#contact" data-svc="Visiting cards">Request a quote &#8250;</a></div><div class="pkg"><h4>Logo + Visiting Card</h4><p>A logo and a matching card, designed together.</p><a class="tl" href="#contact" data-svc="Logo design">Request a quote &#8250;</a></div><div class="pkg"><h4>Business Website</h4><p>A mobile-friendly website with an enquiry form.</p><a class="tl" href="#contact" data-svc="Website design">Request a quote &#8250;</a></div><div class="pkg"><h4>Complete Brand Package</h4><p>Logo, visiting card and website that match.</p><a class="tl" href="#contact" data-svc="Full brand package">Request a quote &#8250;</a></div></div>
 </section>
 
 <section class="wrap sec" id="projects">
@@ -43,7 +52,7 @@
 <article class="proj">
 <img src="images/project-lnc.jpg" alt="Lakshmi Narasimha Constructions website" loading="lazy" width="900" height="600">
 <div>
-<h3>Lakshmi Narasimha Constructions</h3>
+<span class="tag">Website design</span><h3>Lakshmi Narasimha Constructions</h3>
 <p>A website for a construction company, with a photo gallery of completed work, services, and an enquiry form that sends each lead straight to the owner.</p>
 <a class="btn" href="https://lakshmi-narasimha-constructions.aharpad.workers.dev/" target="_blank" rel="noopener">Visit live website</a>
 </div>
@@ -52,7 +61,7 @@
 <article class="proj">
 <span class="ph" aria-hidden="true">Website Planner</span>
 <div>
-<h3>Client Website Planner</h3>
+<span class="tag">Web tool</span><h3>Client Website Planner</h3>
 <p>A tool where clients choose colours, layouts and content for their website, see a live preview, and download the finished site. Every request is saved to our Google Sheet.</p>
 <a class="btn" href="https://web-builder.aharpad.workers.dev/" target="_blank" rel="noopener">Try the planner</a>
 </div>
@@ -75,6 +84,22 @@
 <div class="lg"><span class="m3">C</span></div>
 </div>
 <p class="note">Sample logo styles. We design yours from scratch.</p>
+</section>
+
+<section class="wrap sec" id="process">
+<h2>How we work</h2>
+<div class="steps"><div class="step"><h3>1. Understand</h3><p>We listen to what your business does and what you need.</p></div><div class="step"><h3>2. Plan</h3><p>We agree what will be made and how it should look.</p></div><div class="step"><h3>3. Design</h3><p>We create your logo, card or website in your colours and style.</p></div><div class="step"><h3>4. Review and deliver</h3><p>We share the work, discuss changes with you, and deliver the final result.</p></div></div>
+</section>
+
+<section class="wrap sec" id="brief">
+<h2>Start your brand</h2>
+<p class="lead">Answer a few quick questions and get a ready-made project brief to send us.</p>
+<div class="quiz"><div class="qbar"><i id="qfill"></i></div><p class="note" id="qprog" aria-live="polite"></p><div id="qbody"></div></div>
+</section>
+
+<section class="wrap sec" id="faq">
+<h2>Questions</h2>
+<div class="faq"><details><summary>What services does Hadpad Studio provide?</summary><p>We design visiting cards, logos and websites, and can put them together as a matching brand package.</p></details><details><summary>How do I request a quote?</summary><p>Use the contact form, message us on WhatsApp, or answer the quick questions in “Start your brand” and send us the brief.</p></details><details><summary>How long does a project take?</summary><p>It depends on what you need. After we understand your requirements, we will tell you the expected timeline.</p></details><details><summary>Can I request design changes?</summary><p>Yes. Tell us what you would like adjusted. We discuss changes with you before the project starts and while it is in progress.</p></details><details><summary>Will my website work on mobile phones?</summary><p>We design websites to be mobile-friendly, so they are comfortable to use on phones, tablets and computers.</p></details><details><summary>Can you help with domain and hosting setup?</summary><p>Please contact us with your requirements and we will discuss the best setup for your website.</p></details><details><summary>How can I contact Hadpad Studio?</summary><p>Call +91 63002 20509, email aharpad@gmail.com, message us on WhatsApp, or use the contact form below.</p></details></div>
 </section>
 
 <section class="wrap sec" id="about">
@@ -109,6 +134,7 @@
 </section>
 </main>
 <footer><div class="wrap">© 2026 Hadpad Studio. All rights reserved.</div></footer>
+<a class="wafab" href="https://wa.me/916300220509?text=Hi%20Hadpad%20Studio%2C%20I%20would%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener" aria-label="Chat with Hadpad Studio on WhatsApp"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg><span>WhatsApp</span></a>
 <script src="script.js"></script>
 </body>
 </html>
