@@ -1,0 +1,105 @@
+/* HADPAD STUDIO — motion layer. Safe to delete: remove the two tags in index.html and the site returns to static. */
+
+/* ---------- scroll progress bar ---------- */
+.scroll-progress{position:fixed;top:0;left:0;height:3px;width:100%;background:linear-gradient(90deg,#7351ac,#c4a6f0);transform-origin:0 50%;transform:scaleX(0);z-index:100;pointer-events:none}
+
+/* ---------- page-load entrance ---------- */
+@keyframes dropIn{from{opacity:0;translate:0 -24px}to{opacity:1;translate:0 0}}
+@keyframes riseIn{from{opacity:0;translate:0 34px}to{opacity:1;translate:0 0}}
+@keyframes popIn{from{opacity:0;scale:.82}to{opacity:1;scale:1}}
+.header{animation:dropIn .7s cubic-bezier(.2,.7,.2,1) both}
+.hero-kicker{animation:riseIn .8s .15s cubic-bezier(.2,.7,.2,1) both}
+.hero-copy h1{animation:riseIn .9s .3s cubic-bezier(.2,.7,.2,1) both}
+.hero-copy p{animation:riseIn .9s .5s cubic-bezier(.2,.7,.2,1) both}
+.hero-buttons{animation:riseIn .9s .7s cubic-bezier(.2,.7,.2,1) both}
+.hero-footer{animation:riseIn .9s .95s cubic-bezier(.2,.7,.2,1) both}
+.visual-plate{animation:popIn 1s .35s cubic-bezier(.2,.7,.2,1) both}
+
+/* ---------- live logo ---------- */
+.wordmark img{animation:popIn .8s .2s cubic-bezier(.3,1.5,.5,1) both;transition:rotate .5s cubic-bezier(.3,1.5,.5,1),scale .4s}
+.wordmark:hover img{rotate:-12deg;scale:1.12}
+.wordmark .purple{display:inline-block;animation:dotBounce 2.4s 1.2s ease-in-out infinite}
+@keyframes dotBounce{0%,100%{translate:0 0}50%{translate:0 -4px}}
+
+.visual-center{position:relative}
+.visual-center img{position:relative;z-index:2;animation:logoFloat 6s ease-in-out infinite,logoGlow 4s ease-in-out infinite;will-change:translate,filter}
+@keyframes logoFloat{0%,100%{translate:0 0;rotate:-1.2deg}50%{translate:0 -14px;rotate:1.2deg}}
+@keyframes logoGlow{0%,100%{filter:drop-shadow(0 8px 18px rgba(0,0,0,.25))}50%{filter:drop-shadow(0 18px 34px rgba(220,190,255,.55))}}
+.visual-center::before,.visual-center::after{content:"";position:absolute;left:50%;top:50%;border-radius:50%;pointer-events:none;translate:-50% -50%}
+.visual-center::before{width:78%;aspect-ratio:1;border:1px dashed rgba(245,238,251,.38);animation:spin 40s linear infinite}
+.visual-center::after{width:96%;aspect-ratio:1;border:1px solid rgba(245,238,251,.14);animation:pulseRing 5s ease-in-out infinite}
+@keyframes spin{to{rotate:360deg}}
+@keyframes pulseRing{0%,100%{scale:.92;opacity:.35}50%{scale:1.04;opacity:.9}}
+
+/* soft light sweeping across the plate */
+.visual-plate{position:relative;overflow:visible}
+.visual-plate::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 35%,rgba(255,255,255,.16) 50%,transparent 65%);background-size:250% 100%;animation:sheen 7s 1.5s ease-in-out infinite;pointer-events:none}
+@keyframes sheen{0%{background-position:150% 0}60%,100%{background-position:-50% 0}}
+
+.floating-label{animation:labelBob 5s ease-in-out infinite}
+@keyframes labelBob{0%,100%{translate:0 0}50%{translate:0 -9px}}
+.status-dot{position:relative;animation:dotPulse 2s ease-out infinite}
+@keyframes dotPulse{0%{box-shadow:0 0 0 0 rgba(115,81,172,.55)}100%{box-shadow:0 0 0 12px rgba(115,81,172,0)}}
+.hero-footer a span{display:inline-block;animation:arrowDown 1.6s ease-in-out infinite}
+@keyframes arrowDown{0%,100%{translate:0 0}50%{translate:0 5px}}
+
+/* ---------- strip ---------- */
+.star{display:inline-block;animation:spin 8s linear infinite}
+
+/* ---------- scroll reveal (only when JS is on, so content is never hidden without it) ---------- */
+.js .reveal{opacity:0;translate:0 44px;transition:opacity .9s cubic-bezier(.2,.7,.2,1),translate .9s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
+@media (min-width:821px){.js .reveal.left{translate:-50px 0}.js .reveal.right{translate:50px 0}}
+.js .reveal.in{opacity:1;translate:0 0}
+
+/* ---------- moving images ---------- */
+.project-art>img{animation:kenburns 16s ease-in-out infinite alternate}
+@keyframes kenburns{from{scale:1}to{scale:1.09}}
+.project-art{transition:box-shadow .4s,translate .4s}
+.project-art:hover{translate:0 -6px;box-shadow:0 26px 50px rgba(33,29,40,.18)}
+.kirana-preview,.mint-preview,.planner-preview{transition:scale .6s cubic-bezier(.2,.7,.2,1)}
+.project-art:hover .kirana-preview,.project-art:hover .mint-preview,.project-art:hover .planner-preview{scale:1.04}
+.circle-arrow{transition:transform .3s,scale .3s}
+.project-art:hover .circle-arrow{scale:1.12}
+
+.detail-card{overflow:hidden;transition:translate .5s cubic-bezier(.2,.7,.2,1),box-shadow .5s;transform-style:preserve-3d}
+.detail-card img{display:block;width:100%;animation:cardDrift 9s ease-in-out infinite alternate;transition:scale .6s}
+.detail-card:nth-child(2) img{animation-delay:-4s}
+.detail-card:hover{translate:0 -10px;box-shadow:0 28px 55px rgba(33,29,40,.2)}
+.detail-card:hover img{scale:1.05}
+@keyframes cardDrift{from{translate:0 -6px}to{translate:0 6px}}
+
+.about-photo img{transform:scale(1.12);will-change:transform;transition:transform .15s linear}
+
+/* ---------- services ---------- */
+.service{position:relative;transition:padding .4s cubic-bezier(.2,.7,.2,1),background .4s}
+.service::before{content:"";position:absolute;left:0;bottom:-1px;height:2px;width:100%;background:var(--purple);transform:scaleX(0);transform-origin:0 50%;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.service:hover::before{transform:scaleX(1)}
+.service:hover{padding-left:16px;background:rgba(255,255,255,.45)}
+.service-arrow{transition:transform .35s cubic-bezier(.3,1.5,.5,1)}
+.service:hover .service-arrow{transform:rotate(45deg) scale(1.2)}
+
+/* ---------- buttons & links ---------- */
+.btn{position:relative;overflow:hidden}
+.btn::after{content:"";position:absolute;top:0;left:-70%;width:50%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.35),transparent);transform:skewX(-20deg);transition:left .7s}
+.btn:hover::after{left:130%}
+.btn span,.quiet-link span,.nav-contact span,.email{transition:transform .3s}
+.btn:hover span,.quiet-link:hover span{transform:translate(3px,-3px)}
+nav a:not(.nav-contact){position:relative}
+nav a:not(.nav-contact)::after{content:"";position:absolute;left:0;bottom:-4px;height:2px;width:100%;background:var(--purple);transform:scaleX(0);transform-origin:100% 50%;transition:transform .35s}
+nav a:not(.nav-contact):hover::after{transform:scaleX(1);transform-origin:0 50%}
+.contact-symbol{display:inline-block;animation:symbolFloat 4s ease-in-out infinite}
+@keyframes symbolFloat{0%,100%{translate:0 0;rotate:0deg}50%{translate:6px -8px;rotate:8deg}}
+
+/* header gets a soft shadow once you scroll */
+.header{transition:box-shadow .3s,background .3s}
+.header.scrolled{box-shadow:0 10px 30px rgba(33,29,40,.08)}
+
+/* ---------- accessibility: respect "reduce motion" ---------- */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .js .reveal{opacity:1!important;translate:0 0!important}
+  .about-photo img{transform:none!important}
+}
+
+/* stop animated pieces from ever creating sideways scroll */
+html,body{overflow-x:clip}
